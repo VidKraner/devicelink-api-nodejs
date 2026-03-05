@@ -1,0 +1,53 @@
+### Register Tesla device
+POST http://localhost:3000/api/v1/devices
+Content-Type: application/json
+x-api-key: YDUoAP*MtusUsMocFYmP3-HVs
+
+{
+  "brand": "tesla",
+  "type": "ev_charger",
+  "model": "Tesla Wall Connector"
+}
+
+### Register GEN-I solar inverter
+POST http://localhost:3000/api/v1/devices
+Content-Type: application/json
+x-api-key: YDUoAP*MtusUsMocFYmP3-HVs
+
+{
+  "brand": "geni",
+  "type": "solar_inverter",
+  "model": "GEN-I Solar Panel"
+}
+
+### Register TAB battery
+POST http://localhost:3000/api/v1/devices
+Content-Type: application/json
+x-api-key: YDUoAP*MtusUsMocFYmP3-HVs
+
+{
+  "brand": "tab",
+  "type": "battery",
+  "model": "TAB Home Battery"
+}
+
+### List all devices
+GET http://localhost:3000/api/v1/devices
+x-api-key: YDUoAP*MtusUsMocFYmP3-HVs
+
+### Get device data
+GET http://localhost:3000/api/v1/devices/e2cbcedc-8f20-4184-b0b9-2789e0bc5c92/data
+x-api-key: YDUoAP*MtusUsMocFYmP3-HVs
+
+
+### Get device status
+GET http://localhost:3000/api/v1/devices/e2cbcedc-8f20-4184-b0b9-2789e0bc5c92/status
+x-api-key: YDUoAP*MtusUsMocFYmP3-HVs
+
+
+### Test without API key (should return 401)
+GET http://localhost:3000/api/v1/devices
+
+### Test with wrong API key (should return 403)
+GET http://localhost:3000/api/v1/devices
+x-api-key: wrong_key
